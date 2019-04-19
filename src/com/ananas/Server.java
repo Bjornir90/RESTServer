@@ -21,7 +21,7 @@ public class Server {
         sf.create();
 
         System.out.println("Saisir car+return pour stopper le serveur");
-        System.out.println("Lancer un navigateur sur l'URL:" + baseURL+"image/index.html");
+        System.out.println("Lancer un navigateur sur l'URL:" + baseURL + "/hello");
         Scanner sc = new Scanner(System.in);
         sc.next();
 

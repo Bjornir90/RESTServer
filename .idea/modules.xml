@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ArchiDisREST.iml" filepath="$PROJECT_DIR$/ArchiDisREST.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RESTServer.iml" filepath="$PROJECT_DIR$/RESTServer.iml" />
     </modules>
   </component>
 </project>

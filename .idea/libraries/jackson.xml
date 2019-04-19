@@ -1,10 +1,15 @@
 <component name="libraryTable">
   <library name="jackson">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/lib/jackson" />
+      <root url="jar://$PROJECT_DIR$/lib/jackson/jackson-databind-2.9.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jackson/jackson-module-jaxb-annotations-2.9.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jackson/jackson-annotations-2.9.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jackson/jackson-core-2.9.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jackson/jackson-jaxrs-json-provider-2.9.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jackson/jackson-dataformat-xml-2.8.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jackson/jackson-jaxrs-base-2.9.8.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
-    <jarDirectory url="file://$PROJECT_DIR$/lib/jackson" recursive="false" />
   </library>
 </component>

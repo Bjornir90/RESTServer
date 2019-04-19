@@ -1,13 +1,16 @@
 package com.ananas;
 
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.type.TypeFactory;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.awt.*;
+import java.io.*;
+import java.util.List;
 
 
 public class Resource {
@@ -15,21 +18,25 @@ public class Resource {
     @GET
     @Produces("text/plain")
     @Path("/hello")
-    public String sayHello(@QueryParam("nom") String name){
+    public String sayHello(@QueryParam("name") String name){
         return "Hello " + name;
     }
 
     @GET
     @Produces("image/jpg")
     @Path("/image")
-    public InputStream getImage() throws IOException {
-        return new FileInputStream("./resources/image.jpg");
+    public InputStream getImage(@QueryParam("name") String name) throws IOException {
+        return new FileInputStream("./resources/" + name);
     }
+
     @GET
-    @Produces("application/json")
-    @Path("/data")
-    public Data getData(@QueryParam("name") String name, @QueryParam("value") double value) {
-        return new Data(name, value);
+    @Produces("image/jpg")
+    @Path("/image")
+    public InputStream getImageFromIndex(@QueryParam("index") int index) throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        TypeFactory typeFactory = objectMapper.getTypeFactory();
+        List<ImageProperties> ImageList = objectMapper.readValue(new File("./resources/list.json"), typeFactory.constructCollectionType(List.class, ImageProperties.class));
+        return getImage("./resources/" + ImageList.get(index).getName());
     }
 
     @GET

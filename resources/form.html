@@ -3,14 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Form</title>
+    <script>
+        var urlName = "http://localhost:9000/image?name=";
+        var urlIndex = "http://localhost:9000/imageindex?index=";
+
+        function fetchByName(){
+            let name = document.getElementById("imageName").value;
+            console.log("Name of requested image :" + name);
+            fetch(urlName + name)
+                .then(response => response.blob())
+                .then(image => {
+                    var virtualURL = URL.createObjectURL(image);
+                    document.getElementById("image").setAttribute("src", virtualURL);
+                })
+        }
+
+        function fetchByIndex(){
+            let index = document.getElementById("imageIndex").value;
+            console.log(index);
+            fetch(urlName + index)
+                .then(response => response.blob())
+                .then(image => {
+                    var virtualURL = URL.createObjectURL(image);
+                    document.getElementById("image").setAttribute("src", virtualURL);
+                })
+        }
+    </script>
 </head>
-<body>
-<form action="/response" method="get">
-    <input type="text" name="value"><br>
-    <input type="submit" value="Valider">
-</form>
+
+<textarea id="imageName" contenteditable="true">
+</textarea>
+<button onclick="fetchByName()"></button>
+
+<input type="number" id="imageIndex">
+<button onclick="fetchByIndex()"></button>
+
+
 <form action="/requestlist" method="get">
     <input type="submit" value="Obtenir liste d'images">
 </form>
+<img id="image">
+
 </body>
 </html>

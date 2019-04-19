@@ -1,0 +1,11 @@
+textarea, form, button {
+    margin-bottom: 5px;
+    width: 20em;
+    text-align: center;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

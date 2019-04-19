@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Form</title>
+    <title>Télécharge des fruits de ta région</title>
+    <link rel="stylesheet" type="text/css" href="/css">
     <script>
         var urlName = "http://localhost:9000/image?name=";
         var urlIndex = "http://localhost:9000/imageindex?index=";
@@ -31,6 +32,7 @@
     </script>
 </head>
 
+<body>
 <textarea id="imageName" contenteditable="true">
 </textarea> <br>
 <button onclick="fetchByName()">Récupérer l'image par son nom</button>
@@ -39,14 +41,14 @@
 <button onclick="fetchByIndex()">Récupérer l'image par son index</button>
 
 <form method="get" action="suppress">
-    <input type="text" name="name">
+    <input type="text" name="name"><br>
     <input type="submit" value="Supprimer l'image">
 </form>
 
 <form action="/requestlist" method="get">
     <input type="submit" value="Obtenir liste d'images">
 </form>
-<img id="image" width="500" height="400">
+<img id="image" width="350" height="350">
 
 </body>
 </html>

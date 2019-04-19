@@ -75,4 +75,11 @@ public class Resource {
         f.delete();
         Server.updateImageList();
     }
+
+    @GET
+    @Path("/css")
+    @Produces("text/css")
+    public InputStream sendCSS() throws FileNotFoundException {
+        return new FileInputStream("./resources/style.css");
+    }
 }

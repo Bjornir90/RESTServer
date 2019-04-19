@@ -36,7 +36,13 @@ public class Resource {
     @Produces("text/html")
     @Path("/form")
     public InputStream getData() throws IOException {
-        return new FileInputStream("static/form.html");
+        return new FileInputStream("./resources/form.html");
+    }
+
+    @GET
+    @Path("/response")
+    public void receiveAnswer(@QueryParam("value") String resourceName) {
+        System.out.println("resourceName = " + resourceName);
     }
 
 }

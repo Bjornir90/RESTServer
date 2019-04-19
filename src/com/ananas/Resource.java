@@ -1,4 +1,4 @@
-package main.java.com.ananas;
+package com.ananas;
 
 
 import javax.ws.rs.GET;

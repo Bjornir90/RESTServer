@@ -1,4 +1,5 @@
-package com.ananas;
+package main.java.com.ananas;
+
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -24,4 +25,18 @@ public class Resource {
     public InputStream getImage() throws IOException {
         return new FileInputStream("./resources/image.jpg");
     }
+    @GET
+    @Produces("application/json")
+    @Path("/data")
+    public Data getData(@QueryParam("name") String name, @QueryParam("value") double value) {
+        return new Data(name, value);
+    }
+
+    @GET
+    @Produces("text/html")
+    @Path("/form")
+    public InputStream getData() throws IOException {
+        return new FileInputStream("static/form.html");
+    }
+
 }

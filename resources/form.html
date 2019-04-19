@@ -21,7 +21,7 @@
         function fetchByIndex(){
             let index = document.getElementById("imageIndex").value;
             console.log(index);
-            fetch(urlName + index)
+            fetch(urlIndex + index)
                 .then(response => response.blob())
                 .then(image => {
                     var virtualURL = URL.createObjectURL(image);
@@ -32,17 +32,21 @@
 </head>
 
 <textarea id="imageName" contenteditable="true">
-</textarea>
-<button onclick="fetchByName()"></button>
+</textarea> <br>
+<button onclick="fetchByName()">Récupérer l'image par son nom</button>
+<br>
+<input type="number" id="imageIndex"><br>
+<button onclick="fetchByIndex()">Récupérer l'image par son index</button>
 
-<input type="number" id="imageIndex">
-<button onclick="fetchByIndex()"></button>
-
+<form method="get" action="suppress">
+    <input type="text" name="name">
+    <input type="submit" value="Supprimer l'image">
+</form>
 
 <form action="/requestlist" method="get">
     <input type="submit" value="Obtenir liste d'images">
 </form>
-<img id="image">
+<img id="image" width="500" height="400">
 
 </body>
 </html>

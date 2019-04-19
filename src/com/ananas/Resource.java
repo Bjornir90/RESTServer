@@ -67,4 +67,12 @@ public class Resource {
     public InputStream sendImageList() throws FileNotFoundException {
         return new FileInputStream("./resources/list.json");
     }
+
+    @GET
+    @Path("/suppress")
+    public void suppressImage(@QueryParam("name") String imageName){
+        File f = new File("./resources/images/"+imageName);
+        f.delete();
+        Server.updateImageList();
+    }
 }

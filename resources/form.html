@@ -34,10 +34,10 @@
 
 <body>
 <textarea id="imageName" contenteditable="true">
-</textarea> <br>
+</textarea>
 <button onclick="fetchByName()">Récupérer l'image par son nom</button>
 <br>
-<input type="number" id="imageIndex"><br>
+<input type="number" id="imageIndex">
 <button onclick="fetchByIndex()">Récupérer l'image par son index</button>
 
 <form method="get" action="suppress">
@@ -50,7 +50,7 @@
 </form>
 <form action="/upload" method="post" enctype="multipart/form-data">
     <p>
-        Select a file : <input type="file" name="content" size="45" />
+        Select a file : <input type="file" name="content" />
     </p>
     <input type="Submit" value="Upload" />
 </form>

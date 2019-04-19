@@ -82,6 +82,7 @@ public class Resource {
         String name = data.getDataHandler().getName();
         InputStream is = data.getDataHandler().getInputStream();
         byte buffer[] = new byte[is.available()];
+        is.read(buffer);
         FileOutputStream output = new FileOutputStream("./resources/images/" + name);
         output.write(buffer);
         output.close();

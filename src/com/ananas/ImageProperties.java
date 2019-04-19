@@ -2,21 +2,21 @@ package com.ananas;
 
 public class ImageProperties {
 
-    private String name;
+    private String filename;
     private int index;
     private double size;
 
     public ImageProperties() {
     }
 
-    public String getName() {
+    public String getFilename() {
 
-        return name;
+        return filename;
     }
 
-    public void setName(String name) {
+    public void setFilename(String name) {
 
-        this.name = name;
+        this.filename = name;
     }
 
     public double getIndex() {

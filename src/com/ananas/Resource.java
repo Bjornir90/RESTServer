@@ -33,17 +33,17 @@ public class Resource {
     @Produces("image/jpg")
     @Path("/image")
     public InputStream getImage(@QueryParam("name") String name) throws IOException {
-        return new FileInputStream("./resources/" + name);
+        return new FileInputStream("./resources/images/" + name);
     }
 
     @GET
     @Produces("image/jpg")
-    @Path("/image")
+    @Path("/imageindex")
     public InputStream getImageFromIndex(@QueryParam("index") int index) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         TypeFactory typeFactory = objectMapper.getTypeFactory();
         List<ImageProperties> ImageList = objectMapper.readValue(new File("./resources/list.json"), typeFactory.constructCollectionType(List.class, ImageProperties.class));
-        return getImage("./resources/" + ImageList.get(index).getName());
+        return getImage(ImageList.get(index).getFilename());
     }
 
     @GET

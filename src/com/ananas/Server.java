@@ -1,4 +1,4 @@
-package main.java.com.ananas;
+package com.ananas;
 
 import com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider;
 import org.apache.cxf.jaxrs.JAXRSServerFactoryBean;

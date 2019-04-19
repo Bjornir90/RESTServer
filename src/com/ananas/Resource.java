@@ -22,6 +22,6 @@ public class Resource {
     @Produces("image/jpg")
     @Path("/image")
     public InputStream getImage() throws IOException {
-        return new FileInputStream("./files/Koala.jpg");
+        return new FileInputStream("./resources/image.jpg");
     }
 }

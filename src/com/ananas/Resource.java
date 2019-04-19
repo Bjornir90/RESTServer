@@ -1,17 +1,19 @@
 package com.ananas;
 
-
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ArrayNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.fasterxml.jackson.databind.type.TypeFactory;
-
+import jdk.internal.util.xml.impl.Input;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
-import java.awt.*;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.*;
 import java.util.List;
-
 
 public class Resource {
 
@@ -52,4 +54,10 @@ public class Resource {
         System.out.println("resourceName = " + resourceName);
     }
 
+    @GET
+    @Produces("application/json")
+    @Path("/requestlist")
+    public InputStream sendImageList() throws FileNotFoundException {
+        return new FileInputStream("./resources/list.json");
+    }
 }
